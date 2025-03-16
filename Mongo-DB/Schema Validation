@@ -1,0 +1,27 @@
+
+### Schema Validation
+
+* By default MongoDB has a flexible schema.
+* Schema validation rules can be created in order to ensure that all documents in a collection share a similar structure.
+
+db.createCollection("posts_col", { validator: {
+                                $jsonSchema: {
+                                bsonType: "object",
+                                required: [ "title", "likes" ],
+                                properties: {
+                                    title: {
+                                    bsonType: "string",
+                                    description: "Title of post - Required."},
+                                    category: {
+                                    bsonType: "string",
+                                    description: "Category of post - Optional."},
+                                    likes: {
+                                    bsonType: "int",
+                                    description: "Post like count. Must be an integer - Required."},
+                                    tags: {
+                                    bsonType: ["string"],
+                                    description: "Must be an array of strings - Optional."},
+                                    date: {
+                                    bsonType: "date",
+                                    description: "Must be a date - Optional."}
+                                    }}}})

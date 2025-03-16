@@ -1,0 +1,40 @@
+### Query Operators
+--> sum, eq, ne, gt, gte, lt, lte, in, and, or, nor, not, regex, text, where
+
+### Update Operators
+--> set, inc, min, max, mul, currentDate, rename, setOnInsert, unset, addToSet, pop, pull, push
+
+##################################
+### MongoDB Query Operators
+##################################
+
+### Comparison
+$sum :: + 
+$eq, $ne :: = / !=
+$gt, $gte, $lt, $lte :: > / >= / < / <=
+$in: matched within an array
+$and, $or, $nor, $not :: Logically compare
+
+### Evaluation
+$regex: Allows the use of regular expressions when evaluating field values
+$text: Performs a text search
+$where: Uses a JavaScript expression to match documents
+$
+
+##################################
+### MongoDB Update Operators
+##################################
+
+### Update Fields
+$set: Sets the value
+$inc: Increments the value
+$currentDate: Sets the current date
+$rename: Renames the field
+$unset: Removes the field
+$
+### Update Array
+$addToSet: Adds distinct elements
+$pop: Removes the first or last element
+$pull: Removes all elements if match the query
+$push: Adds an element
+

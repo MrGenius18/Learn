@@ -1,0 +1,48 @@
+mongod # run/start mongodb server
+show dbs # show list of dbs for present on server
+use library # create/use db
+db.dropDatabase() # delete db
+db # which db you use
+
+# Collection {like Table in SQL}
+db.createCollection('Books') # create new collection
+show collections # show list of  collections
+db.Books.drop() # delete collection
+
+##########################
+object = {_id:1, # _id is unique/not mandatory
+          Name:'Python', 
+          Price:100, 
+          tags: ["news", "events"], 
+          date: Date()} # enter current datetime
+
+condition = {Name:'Python'}
+# Operator
+Query  Operators --> sum, eq, ne, gt, gte, lt, lte, in, and, or, nor, not, regex, text, where
+Update Operators --> set, inc, min, max, mul, currentDate, rename, setOnInsert, unset, addToSet, pop, pull, push
+###########################
+
+# CRUD Operations in Collection
+## insert/create new records
+db.Books.insert({object})
+db.Books.insertOne({object})
+db.Books.insertMany([{object}, {object}])
+
+## show/read records
+db.Books.find({condition}, {name:1, _id:0}) # 0=hide/1=show Projection
+    .limit(2) # top 2
+    .pretty() # prettify/best visual.
+    .sort({price:1/-1}) # 1=asc/-1=desc 
+    .findOne()
+    .count()
+
+## update old records
+db.collection_name.update({condition}, {$operator:{changes}})
+db.Books.update({condition}, {$operator:{field:'new_val'}}) # only first update
+db.Books.updateOne({condition}, {$rename:{Name:'book_name'}}) # only firt update
+db.Books.updateMany({condition}, {$inc:{price:50}}) # all updates
+
+## remove/delete old records
+db.Books.remove({condition})
+db.posts.deleteOne({condition})
+db.posts.deleteMany({condition})

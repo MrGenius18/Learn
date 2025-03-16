@@ -1,0 +1,56 @@
+### Aggregation Pipelines #######
+Aggregation operations allow you to 
+-- group, sort, perform calculations, analyze data, and much more.
+#################################
+
+--> match, group, sort, project, limit, addFields, count, lookup, out, search
+
+#################################
+
+db.Books.aggregate([
+  { $match: {property_type: "House"} },
+  { $sort: {"accommodates": -1} },
+  { $addFields: { avgGrade: {$avg:"$grades.score"} }},
+  { $project: {"name": 1, "cuisine": 1, "address": 1, "avgGrade": 1} },
+  { $group: { _id:"$Author", totalLikes: {$sum:"$prices"} }}
+  { $limit: 5 },
+  { $count: "totalChinese" },
+])
+
+#################################
+### Aggregation $lookup
+
+from: The collection to use for lookup in the same database
+localField: The field in the primary collection that can be used as a unique identifier in the from collection.
+foreignField: The field in the from collection that can be used as a unique identifier in the primary collection.
+as: The name of the new field that will contain the matching documents from the from collection.
+
+db.comments.aggregate([
+  { $lookup: { from: "movies",
+               localField: "movie_id",
+               foreignField: "_id",
+               as: "movie_details" } }
+])
+#################################
+### Aggregation $out
+
+db.listingsAndReviews.aggregate([
+  { $group: { _id: "$property_type", properties: { $push: { name: "$name",
+                                                            accommodates: "$accommodates",
+                                                            price: "$price"} 
+                                                    }
+            }
+  },
+  { $out: "properties_by_type" }, // must be the last stage returned documents
+])
+
+#################################
+### Aggregation $search
+
+db.movies.aggregate([
+  { $search: { index: "default", // optional unless you named your index something other than "default"
+               text: { query: "star wars",
+                       path: "title" }
+            }
+  }
+])
