@@ -1,5 +1,5 @@
-# video cover: 123
-# **Langchain**  :::  Alternative  ==>  *LlamaIndex* | *Haystack*
+# video cover: 1234
+# **Langchain**  :::  Alternative  ==>  *LlamaIndex* || *Haystack*
 
 ### it's *open source framework for developing app powerd by llms*.
 
@@ -16,38 +16,48 @@ Conversational *Chatbots* (Handle Customer query)
 *Summarization/Research Helpers*
 
 ### **Components**::
-*Models* | *Prompts* | *Chains* | *Memory* | *Indexes* | *Agents*
+*Models* || *Prompts* || *Chains* || *Memory* || *Indexes* || *Agents*
 
 ##### **Models**:: it's interface intrect with ai model
 Language model (*LLM*) ==> text to text convert
 Embedding model (*EM*) ==> text convert into vector (use for *Semantic Search* for *RAG based App*)
 Models ==> *Anthropic*, *MistralAI*, *OpenAI*, *GoogleGenerativeAI*, Bedrock, NVIDIA, *Ollama*, Llamacpp, *HuggingFace*
 
-##### **Prompts**::
+##### **Prompts**:: Static || Dynamic (using PromptTemplate)
 Dynamic & Reusable 
 Role based 
 Few Shot Prompting (first give some example then test)
 
 ##### **Chains**:: Create Pipeline
-*Parallel* | *Conditional*
+*Parallel* || *Conditional*
 
 ##### **Indexes**:: Connect app to external knowledge (PDFs, Websites, Databases)
-*Document Loader* | *Text/page Spliter* | *Vectore db/Store* | *Retrivers*
+*Document Loader* || *Text/page Spliter* || *Vectore db/Store* || *Retrivers*
 
-##### **Memory**:: 
+##### **Memory**:: save History of chat 
 • *Conversation Buffer Memory*: Stores a transcript of recent messages. Great for short chats but can grow large quickly.
 • *Conversation Buffer Window Memory*: Only keeps the last N interactions to avoid excessive token usage.
 • *Summarizer-Based Memory*: Periodically summarizes older chat segments to keep a condensed memory footprint.
 • *Custom Memory*: For advanced use cases, you can store specialized state (e.g., the user's preferences or key facts about them) in a custom memory class.
 
-
 ### **PromptTemplate**::
+A PromptTemplate in LangChain is a *structured way to create prompts dynamically* by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate *allows you to define placeholders that can be filled in at runtime with different inputs*.
 
-A PromptTemplate in LangChain is a structured way to create prompts dynamically by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate allows you to define placeholders that can be filled in at runtime with different inputs.
+This makes it *reusable, flexible, and easy to manage*, especially when working with dynamic user inputs or automated workflows.
 
-This makes it reusable, flexible, and easy to manage, especially when working with dynamic user inputs or automated workflows.
+*Why use PromptTemplate over f strings*?
+Default validation || reusable || LangChain Ecosystem
 
-Why use PromptTemplate over f strings?
-1. Default validation
-2. reusable
-3. LangChain Ecosystem
+### **Type Of Messages**:: *model.invoke* to save history
+    => Single Message (single turn stand alone query): 
+            Static Msg
+            Dynamic Msg -> using *PromptTemplate*
+
+    => List of Message (multi turn conversation)
+            Static Msg -> using *lanchain_core.messages* === *System* || *Human* || *AI*
+            Dynamic Msg -> using *ChatPromptTemplate*
+
+### **Message Placeholder**:: 
+--<use inside a ChatPromptTemplate to dynamically insert chat history
+
+# 
