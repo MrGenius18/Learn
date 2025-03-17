@@ -1,22 +1,74 @@
 # Hadoop developed in Java since 2005 (Doug cutting + Mike -> Yahoo -> 2006 Apache soft. foundations)
 
-==< Apache Based Opensource Framework that allow to Store & Process of Big Data set in a Parallel & Distributed manner
-
-# Main Components::
-    => HDFS (Hadoop Distribution File System) 
-        -> store & manage huge data in efficient manner using *Distributed Storage* (by default 128MB file partition)
-        -> which data where store that all are save in *Master Node* by "meta data"
-        -> also use Replication method === if any failure problem fatch so use duplicate files
-
-    => MapReduce
-        -> Distributed & Parallel Processing Technique for Process data
-        -> ip/op both are in list key:value pair formate
-    
-==< Yarn || Hadoop Ecosystem || Apache Sqoop / Flume / Pig / Hive / HBase
+==<< Apache Based Opensource Framework that allow to Store & Process of Big Data set in a Parallel & Distributed manner
 =======================================================================================
 
-==< Common Utilities:
-        provide Java Library/files/scripts to start/use/maintante Hadoop Modules
+>>=> Advantages & Disdvantages::
+        ==< Advantages:
+                * Computing Power high || Big Storage || Fault Tolerance || Flexibility || Low Cost || Scallibility
+        
+        ==< Disdvantages: 
+                * Not fit for Small Data || Security Concern (by default privacy is Off so On)
+                * programming model is restrictive bcs it's simple nature
+                * joins of multiple datasets is complex & slow bcs it's big data
+=======================================================================================
 
-==< YARN: Yet Another Resource Negotiator
-        work for Job Scheduling & Resource Management (JS & RM)
+>>=> Hadoop Ecosystem::
+        * it's not a programming language or Service.
+        * it's Platform/Framework to solve Big Data Problems
+        * it's have Hadoop Components like HDFS, MapReduce, YARN, Apache Big, Apache Hive, Mahout
+=======================================================================================
+
+>>=> Main Components::
+    ==< HDFS (Hadoop Distribution File System) 
+        * store & manage huge data in efficient manner using *Distributed Storage* (by default 64/128MB file partition)
+        * which data where store that all are save in *Master Node* by "meta data"
+        * based on Replication method === if any failure problem fatch so use duplicate files
+
+    ==< MapReduce (Yarn based)
+        * Distributed & Parallel Processing Technique for Process data
+        * ip/op both are in list key:value pair formate
+    
+    ==< YARN: Yet Another Resource Negotiator
+        * work for Job Scheduling & Resource Management (JS & RM)
+
+    ==< Common Utilities:
+        * provide Java Library/files/scripts to start/use/maintante Hadoop Modules
+
+Another ==<< Mahout || Apache Sqoop / Flume / Pig / Hive / HBase
+=======================================================================================
+
+>>=> HDFS:: Distributed Store (GFS: Global File System Based)
+        ==< Name Node: (store Meta Data)
+                * controll Data nodes, data related info store
+                * divide the file into blocks & Distribut and mapping the data node
+
+        ==< Data Node: (store Actual Data)
+                * Store the blocks
+
+>>=> MapReduce:: Parallel Process
+        * Map is change the datatypes into key:value pair (tuple) data
+        * Reduce is combine the tuples based on key and make set of tuples
+        
+        ==< Master Job Tracker: (One)
+                * Managing Resources, Scheduling & Monitoring Tasks
+        
+        ==< Slave Task Tracker: (Many)
+                * Execute the Task, Provide Task Status
+=======================================================================================
+
+>>=> Apache Hive:: High Scalable
+        * Opensource data warehouse system for quering & analyzing large dataset store in H files. (H for Hadoop)
+        * Data Summarization, Query, Analysis
+        * use HQL (Hive + SQL)
+        ** work like user's SQL query for convert into MapReduce Job based on MetaData and it's gives to Hadoop Cluster.
+
+>>=> Apache Pig::
+        * use Pig Latin || Requires JRE (Java Runtime Environment)
+        ** work like User Define Function present in Local File System -> convert into Pig Script 
+        -> Pig Latin Compiler take this Script and analyze based on i/p file in HDFS and create MapReduce Job
+        -> Execution of MapReduce Job -> o/p file and it's store in HDFS
+
+>>=> Apache HBase::
+        * NoSQL based Distributed DataBase System to store Data in table formate
+        * 
