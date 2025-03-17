@@ -1,0 +1,22 @@
+# Hadoop developed in Java since 2005 (Doug cutting + Mike -> Yahoo -> 2006 Apache soft. foundations)
+
+==< Apache Based Opensource Framework that allow to Store & Process of Big Data set in a Parallel & Distributed manner
+
+# Main Components::
+    => HDFS (Hadoop Distribution File System) 
+        -> store & manage huge data in efficient manner using *Distributed Storage* (by default 128MB file partition)
+        -> which data where store that all are save in *Master Node* by "meta data"
+        -> also use Replication method === if any failure problem fatch so use duplicate files
+
+    => MapReduce
+        -> Distributed & Parallel Processing Technique for Process data
+        -> ip/op both are in list key:value pair formate
+    
+==< Yarn || Hadoop Ecosystem || Apache Sqoop / Flume / Pig / Hive / HBase
+=======================================================================================
+
+==< Common Utilities:
+        provide Java Library/files/scripts to start/use/maintante Hadoop Modules
+
+==< YARN: Yet Another Resource Negotiator
+        work for Job Scheduling & Resource Management (JS & RM)
