@@ -71,4 +71,12 @@ Another ==<< Mahout || Apache Sqoop / Flume / Pig / Hive / HBase
 
 >>=> Apache HBase::
         * NoSQL based Distributed DataBase System to store Data in table formate
-        * 
+        * H-Master to work for DDL
+        * Region Server join to Client and H-Master. it's Reactive nature based, work for DML
+        ** Zookeeper co-ordinet & manage to all sub Components
+
+>>=> Mahout::
+        * use Java Libraries to analytical Technique on Big Data
+        ** Techniques:  Classification -> Logistic Regression || Naive Bayes
+                        Clustering -> K-Means
+=======================================================================================
