@@ -1,0 +1,114 @@
+# **Algorithmic Complexity**::
+
+-<<What do we want to *evaluate the algorithm, Scalability, & in terms of input size*
+
+==<<Time Efficiency:
+    >=> *Techniques* to measure time efficiency
+*
+        -> Measuring *time* to execute: {time.time()-start_time}
+            adv > Different time for different algorithm
+            dis > Different machines different time
+                > Does not work for extremely small input
+                > time varies if implementation changes
+                > Time varies for different inputs, but can't establish a relationship
+*
+        -> *Counting* operations involved: {count 3X+1}
+            adv > Different time for different algorithm
+                > Different machines same time
+                > Time varies for different inputs, but establish a relationship
+            dis > Time varies if implementation changes
+                > No clear definition of which operation to count
+*
+        -> Abstract notion of *order of growth*: BigOh/O() used to described worst case
+            > input is very big, relationship b/w time & i/p (not need exact), perform in Worst case, we look at largest factors
+            > ignore additive and multiplicative constants: {count 3X+1} ==> O(X)
+        
+            Answer === Constant, Linear, Quadratic, logarithmic, n log n, exponential
+                    O(1) > O(log n) > O(n) > O(n log n) > O(n2) > O(2n)
+            ex.,O(1) === Mod
+                O(log n) === Binary Search, Power, i/p mul then o/p add, i//n cond loop
+                O(n) === Linear Search, loop, Factorial
+                O(n log n) ===  
+                O(n2) === nested loop
+                O(2n) ===  Fibonaci, i/p add then o/p mul
+
+# -----------------------------------------------------------
+
+# ><Data_Structure Algorithms
+
+### **Data Structure**:: 
+--<<way to store & Organize data efficiently, solve difficult problem in efficient manner
+
+==<<Linear DS:: ><Array, ><Linked-list, ><Stacks, ><Queues, ><Hashing
+==<<Non-Linear DS:: ><Tree, ><Graph
+
+##### **Array**:: best in read operation
+-<used to store multiple items of same type in cont. memmory location
+
+-<fixed-size (memory waste), ><homogeneous (lake of flexibility)
+-<insert/delete operation time ><O(n)
+-<traverse/indexing operation time ><O(1)
+
+-<homogeneous-to-hetrogeneous using ><Referantioal_arrays store address of array value but it`s slow & use extra memory
+-<Dynamic_array solve size adjustment (create first one space array, make every time doubled size array based on require) ><list use Dynamic_array concept
+
+##### **Linked-list**:: best in write operation
+-<collection_of_nodes object/node store[data,address by next state], non-cont. memory location, (tail have none address)
+-<insert/delete operation time ><O(1)
+-<traverse/indexing operation time ><O(n)
+
+-<using_LL to create new ds like stack, queue, double-LL, circular-LL
+
+##### **Stacks**:: Last in First Out (LIFO)
+-<Push insert  ><Pop remove  ><Peak check top element (head)
+-<bottom have none address (tail)
+
+##### **Queue**:: First in First Out (FIFO)
+-<Push by tail/rear (enqueue) ><Pop by top/front (dequeue)
+
+##### **Hashing**:: Fast Searching O(1) by using indexing but space waste
+-<Linear Search O(n), ><Binary Search O(logn)
+-<use hashing function but fetch Collision problem (dog have 1-index but cat and rat have 2-index)
+    ><Closed address <-Chaining ><solve by using >*Rehasing* / *Tree converting*
+    ><Open address <-Linear <-Quadratic ><solve by using >*Rehasing*
+
+-<Hasing func. = abs(hash(key)) % self.size
+-<Like a Dictionary
+
+### -----------------------------------------------------------
+
+### **Searching**::
+
+##### **Linear Searching**:: O(n) based on ><Brute_Force
+-<Not_required Sorted array
+
+##### **Binary Searching**:: O(log n) 
+-<required Sorted array
+
+### -----------------------------------------------------------
+
+### **Sorting Methods**::
+-<Comparison-based: We compare the elements> Bubble, Insertion, Selection, Quick, Merge, Heap
+-<Non-comparison-based: We do not compare the elements> Counting, Radix
+-<adaptive means if give sorted so not take time
+-<Stable means if 2 same element so don`t change the order
+-<Python default sorting is >*Tim_sort* based on insertion & merge <stable & O(nlogn) 
+
+##### **Monkey Sort**: ><O(inf), >based on random suffle
+##### **Sleep Sort**: ><O(n*max) max is the value of the largest element
+
+##### **Bubble Sort**: ><O(n2), Stable, >adaptive if use flag tech
+##### **Selection Sort**: ><O(n2), Not Stable, >not adaptive <faster then bubble in worst case
+##### **Merge Sort**: ><O(nlogn), Stable, >not adaptive
+
+##### -----------------------------------------------------------
+*Name           Worst       Memory      Stable      Method*
+><Bubble  	    n/n^2       1	        Yes	        Exchanging
+  Merge         nlogn       n           Yes         Merging / dived & concqure
+  Selection     n^2         1           No          Selection
+  Heap 	        nlogn       1           No	        Selection
+><Insertion     n/n^2       1           Yes	        Insertion
+  Tree          nlogn	    n	        Yes	        Insertion
+><Quick         nlogn/n^2   nlogn       No          Partitioning
+
+# -----------------------------------------------------------
