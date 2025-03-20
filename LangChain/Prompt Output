@@ -1,0 +1,44 @@
+# **PromptTemplate**::
+A PromptTemplate in LangChain is a *structured way to create prompts dynamically* by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate *allows you to define placeholders that can be filled in at runtime with different inputs*.
+
+This makes it *reusable, flexible, and easy to manage*, especially when working with dynamic user inputs or automated workflows.
+
+*Why use PromptTemplate over f strings*?
+Default validation || reusable || LangChain Ecosystem
+
+<!-- ----------------------------------------------------------------------- -->
+
+# **Type Of Messages**:: *model.invoke* to save history
+<Single_Message (single turn stand alone query): >
+        <Static Msg: > direct query
+        <Dynamic Msg: > using *PromptTemplate*
+
+<List_of_Message (multi turn conversation)>
+        <Static Msg: > using *lanchain_core.messages* === *System* || *Human* || *AI*
+        <Dynamic Msg: > using *ChatPromptTemplate*
+<!-- ----------------------------------------------------------------------- -->
+
+# **Message Placeholder**:: 
+--<use inside a ChatPromptTemplate to dynamically insert chat history
+
+<!-- ----------------------------------------------------------------------- -->
+
+# **Structured Output**::
+-<Why Data Extraction, API Building, Agents
+-<with_structured_output function used if llm capable >(method = json mode(genai,  quad) / function call(openai))
+        > with data format (TypedDict, *Pydantic*, json_schema)
+-<output_parsers use if llm not capable to genrate structured output
+
+<!-- ----------------------------------------------------------------------- -->
+
+-<TypedDict is a way to define a dictionary in Python where you specify key and values. >(use for Representation) 
+>It helps ensure that your dictionary follows a specific structure.
+
+-<Pydantic is a data valvdation and data parsing library for Python. >(Check criteria)
+>It ensures that the data you work with is correct, structured, and type-safe.
+>Using Fast API to build API that time use this.
+
+-<Json_schema use If project build using multiple language
+
+<!-- ----------------------------------------------------------------------- -->
+

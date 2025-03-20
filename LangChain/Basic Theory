@@ -1,7 +1,10 @@
-# video cover: 1234
+# video cover: 5/8
+
 # **Langchain**  :::  Alternative  ==>  *LlamaIndex* || *Haystack*
 
 ### it's *open source framework for developing app powerd by llms*.
+
+<!-- ----------------------------------------------------------------------- -->
 
 ### **Benefits**::
 Concept of Chain (make pipeline)
@@ -9,11 +12,15 @@ Model Agnostic Development (Any Component use, any model use)
 Complete Ecosystem (Every interface available)
 Memory and State Handling (save pervious steps)
 
+<!-- ----------------------------------------------------------------------- -->
+
 ### **Where use**::
 Conversational *Chatbots* (Handle Customer query)
 *Ai Agents* (like Personal Assistant)
 *Workflow Automation* 
 *Summarization/Research Helpers*
+
+<!-- ----------------------------------------------------------------------- -->
 
 ### **Components**::
 *Models* || *Prompts* || *Chains* || *Memory* || *Indexes* || *Agents*
@@ -40,24 +47,4 @@ Few Shot Prompting (first give some example then test)
 • *Summarizer-Based Memory*: Periodically summarizes older chat segments to keep a condensed memory footprint.
 • *Custom Memory*: For advanced use cases, you can store specialized state (e.g., the user's preferences or key facts about them) in a custom memory class.
 
-### **PromptTemplate**::
-A PromptTemplate in LangChain is a *structured way to create prompts dynamically* by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate *allows you to define placeholders that can be filled in at runtime with different inputs*.
-
-This makes it *reusable, flexible, and easy to manage*, especially when working with dynamic user inputs or automated workflows.
-
-*Why use PromptTemplate over f strings*?
-Default validation || reusable || LangChain Ecosystem
-
-### **Type Of Messages**:: *model.invoke* to save history
-    => Single Message (single turn stand alone query): 
-            Static Msg
-            Dynamic Msg -> using *PromptTemplate*
-
-    => List of Message (multi turn conversation)
-            Static Msg -> using *lanchain_core.messages* === *System* || *Human* || *AI*
-            Dynamic Msg -> using *ChatPromptTemplate*
-
-### **Message Placeholder**:: 
---<use inside a ChatPromptTemplate to dynamically insert chat history
-
-# 
+<!-- ----------------------------------------------------------------------- -->
