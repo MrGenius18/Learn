@@ -1,0 +1,36 @@
+show dbs;
+use db_name;
+db;
+db.dropDatabase()
+
+db.createCollection("collectionName")
+show collections;
+db.collectionName.drop()
+
+db.collectionName.insertOne({});
+db.collectionName.insertManny([{}, {}]);
+
+db.collectionName.find({condition}, {name:1, _id:0}).pretty().sort({price:1/-1});
+db.collectionName.findOne();
+db.collectionName.find().count();
+db.collectionName.find().limit(3);
+db.collectionName.find().explain("executionStats")
+
+db.collectionName.updateOne({condition}, {$set: {key:new_val}})
+db.collectionName.updateMany({condition}, {$inc: {price:50}})
+
+db.collectionName.deleteOne({condition})
+db.collectionName.deleteMany({condition})
+
+db.collectionName.createIndex({Age:1, status:1})
+
+// $ =>  lt/lte/gt/gte/eq/ne  ||  in/all  ||  and/or
+// $ =>  set/rename  ||  inc/mul  ||  currentDate  ||  unset/addToSet/pop/pull/push
+// ##################################### //
+condition = {
+             name:{$in:["B", "P"]},
+             $or: [{status:"On"}, {age:{$gte:18}}],
+             "key.sub_key": "Value"
+            }
+
+// ##################################### //

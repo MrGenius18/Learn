@@ -1,4 +1,4 @@
-mongod # run/start mongodb server
+-<<mongod> # run/start mongodb server
 show dbs # show list of dbs for present on server
 use library # create/use db
 db.dropDatabase() # delete db
