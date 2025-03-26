@@ -13,7 +13,7 @@
 -<git add -A/file_name -> Add file contents to the index ()
 -<git rm --cached/-f file_name -> Remove files from the working tree and from the index
 -<git commit -m "msg" -> Record changes to the repository (take a snapshot)
--<git restore -A/file_name -> remove changes in that's files
+-<git restore --staged -A/file_name -> remove changes in that's files
 ---------------------------------
 
 ----------- helpfull CMD -----------
