@@ -1,32 +1,37 @@
 >>===> *** >===>> Path <<===< *** <===<<
-==> '/' use in linux/mac & '\' use in windows for path 
+==> '/' use in linux/mac *&* '\' use in windows for path 
 
 => .\ relative/current path  =>  C:\full_path absolute path  =>  ..\ refer parent dir
 => /root/users/ -> first '/' is a home directory 
-================>>***<<================
+>================>>***<<================<
 
 
 
 >>===> *** >===>> GIT CMD <<===< *** <===<<
------------ Git Main CMD -----------
+----------- *Git Main CMD* -----------
 -<git init -> Create an empty or reinitialize an existing one Git repository
 -<git add -A/file_name -> Add file contents to the index ()
 -<git rm --cached/-f file_name -> Remove files from the working tree and from the index
 -<git commit -m "msg" -> Record changes to the repository (take a snapshot)
 -<git restore --staged -A/file_name -> remove changes in that's files
+-<git push -u origin main ->
 ---------------------------------
 
------------ helpfull CMD -----------
+----------- *helpfull CMD* -----------
 -<git -h/-v -> help / check version
 -<git status
 -<git log -> check commit history (head means last commit)
 
 -<touch file_name -> create new file 
 -<ls -> check files from current dir 
--<clear
+-<clear -> 
 ---------------------------------
 
------------ Extra CMD -----------
+----------- *Extra CMD* -----------
 -<git clone -> Clone a repository into a new directory
+-<git branch -> List, create, or delete branches
+-<git switch -c/-D branch_name -> create, or delete branches and switch
+-<git checkout > ML model experiment 
 ---------------------------------
-================>>***<<================
+>================>>***<<================<
+<!-- 2:12:45 / 2:27:47 -->
