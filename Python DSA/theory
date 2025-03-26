@@ -103,12 +103,12 @@
 
 ##### -----------------------------------------------------------
 *Name           Worst       Memory      Stable      Method*
-><Bubble  	    n/n^2       1	        Yes	        Exchanging
+><Bubble  	n/n^2       1	        Yes	    Exchanging
   Merge         nlogn       n           Yes         Merging / dived & concqure
   Selection     n^2         1           No          Selection
-  Heap 	        nlogn       1           No	        Selection
-><Insertion     n/n^2       1           Yes	        Insertion
-  Tree          nlogn	    n	        Yes	        Insertion
+  Heap 	        nlogn       1           No	    Selection
+><Insertion     n/n^2       1           Yes	    Insertion
+  Tree          nlogn	    n	        Yes	    Insertion
 ><Quick         nlogn/n^2   nlogn       No          Partitioning
 
 # -----------------------------------------------------------
